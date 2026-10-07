@@ -6,7 +6,7 @@ import HttpError from '../utils/HttpError.js';
 const router = Router();
 const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 5 * 1024 * 1024, files: 1 },
+  limits: { fileSize: 4 * 1024 * 1024, files: 1 },
   fileFilter(_req, file, callback) {
     if (!file.originalname.toLowerCase().endsWith('.pdf')) {
       callback(new HttpError(400, 'Only PDF resumes are supported.'));

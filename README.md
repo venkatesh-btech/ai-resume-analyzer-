@@ -5,7 +5,7 @@ A beginner-friendly MERN app that compares a PDF resume with a job description a
 ## What it does
 
 - Compares a resume and job description, then reports ATS score, match percentage, matching and missing skills, strengths, weaknesses, keywords, improvement suggestions, and a recommendation.
-- Accepts one text-based PDF up to 5 MB. Scanned/image-only PDFs need OCR and are not supported in this version.
+- Accepts one text-based PDF up to 4 MiB. This leaves room for multipart upload overhead under Vercel Functions' 4.5 MB request-body limit. Scanned/image-only PDFs need OCR and are not supported in this version.
 - Keeps the AI API key on the server. The resume text is extracted in memory and is not saved; the uploaded file is never written to disk.
 - Saves the job description, original file name, and analysis result to MongoDB. History is scoped to a random ID in the current browser, without user accounts. Clearing browser storage means that browser can no longer access its earlier history.
 - Shows the 50 most recent analyses for the current browser.

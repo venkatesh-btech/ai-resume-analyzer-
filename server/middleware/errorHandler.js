@@ -7,7 +7,7 @@ export function notFound(_req, res) {
 export function errorHandler(error, _req, res, _next) {
   if (error instanceof multer.MulterError) {
     const message = error.code === 'LIMIT_FILE_SIZE'
-      ? 'Your PDF must be 5 MB or smaller.'
+      ? 'Your PDF must be 4 MB or smaller.'
       : 'Upload exactly one PDF resume.';
     res.status(400).json({ error: message });
     return;

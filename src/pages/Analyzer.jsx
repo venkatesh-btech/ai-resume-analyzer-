@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { createAnalysis } from '../lib/api.js';
 import { ErrorState } from '../components/MessageState.jsx';
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const MAX_FILE_SIZE = 4 * 1024 * 1024;
 
 export default function Analyzer() {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ export default function Analyzer() {
       return;
     }
     if (candidate.size > MAX_FILE_SIZE) {
-      setError('Your PDF must be 5 MB or smaller.');
+      setError('Your PDF must be 4 MB or smaller.');
       return;
     }
     if (candidate.size === 0) {
@@ -122,7 +122,7 @@ export default function Analyzer() {
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-brand-600 shadow-sm"><Upload size={20} /></span>
                 <span className="mt-3 text-sm font-semibold text-ink">Click to upload <span className="font-normal text-slate-500">or drag and drop</span></span>
-                <span className="mt-1 text-xs text-muted">PDF only · Up to 5 MB</span>
+                <span className="mt-1 text-xs text-muted">PDF only · Up to 4 MB</span>
               </button>
             )}
           </div>
