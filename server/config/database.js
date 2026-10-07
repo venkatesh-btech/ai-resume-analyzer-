@@ -11,7 +11,7 @@ export async function connectDatabase() {
   if (!process.env.MONGODB_URI) {
     throw new HttpError(
       503,
-      'Server setup incomplete: MONGODB_URI is missing. Add it to .env and restart the backend.',
+      'Server configuration is missing MONGODB_URI. Add it in Vercel Project Settings → Environment Variables, then redeploy. For local development, add it to .env and restart the backend.',
       true,
     );
   }
